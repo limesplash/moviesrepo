@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Radoslav Minev on 15.9.2017 г..
  */
 
-public interface MopviesRepository {
+public interface MoviesRepository {
 
     public interface CategoriesLoadedCallback {
         public void onCategoriesLoaded(List<Category> categories);

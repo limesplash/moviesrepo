@@ -5,4 +5,6 @@ package org.limesplasg.rminev.moviesapp.model;
  */
 
 public interface SimpleItem {
+    public String getName();
+    public String getImageUri();
 }

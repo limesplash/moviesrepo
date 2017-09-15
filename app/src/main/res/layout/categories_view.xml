@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
-</LinearLayout>
+    <data>
+        <variable name="pageIndex" type="java.lang.Integer"/>
+        <variable name="viewModel" type="org.limesplasg.rminev.moviesapp.MoviesViewModel" />
+        <import type="android.widget.ArrayAdapter"/>
+    </data>
+
+    <ListView
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:listAdapter="@{viewModel.getAdapter(pageIndex)}"
+        app:onItemClick="@{(list,v,pos,id)-> viewModel.itemClick(((ArrayAdapter)list.getAdapter()).getItem(pos))}">
+    </ListView>
+</layout>
